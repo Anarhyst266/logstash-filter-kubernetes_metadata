@@ -1,4 +1,3 @@
----
 sudo: false
 language: ruby
 cache: bundler
@@ -21,9 +20,10 @@ jdk: openjdk8
 before_install: gem install bundler -v '< 2'
 deploy:
   provider: releases
-  api_key: 0da4ae53d707480fab6637d225a21eccc24d805c
+  api_key:
+    secure: ZNl4iOb0ITJwEZDReQfMNHzrDJNXk7QbonqxeQmSH5waKumKo1RaZNP3sKVKaC/xpqbK1cplxlg+GYVHxLPdQHLPTZTqrwnfV+lKU6DTe75mN8yHN1MDaq8lYSbIJcL9xigYQTwE/S5e3MqZAyyno/bXVSNfcnQlrbQRemD0zJrG2Mm+eULiKopq5igDp0CcUJznNiTSF+9SXrQ4Hr0tMF+lT60GwznmkcGUng/vOtprbPlVJX2xpWAbvqDQSsJHEsDJxuHIo9qiwmo+LBptH8m2TCYlwXDY7438lCUfME+/doH1g9Fx3JvxKrgymfRDE/9K5xTfi4ON3g4cRzUQT9lNrSowUVw6y8lx9QLbIstJbpgsK1XbmmS+ndxirWGi8QDml/3ERSmfkyp1GR2txZAkhEdJ7prcftvPt2ZLxTQDseaDv266AjlxUVW8tTt8zC4/AdznMgH/8YtVdE9cjxKM9LLT0SNU2CdRocGhb0ChgV+jpSOujX/tVG2up5xqnhsMzQImHiigkn5RELVdPCP11Eenvnfj2FrqiNIcHICYzlZ3yBJcXt2GOaJxPI5faKAaqdJ8QOgl1XIcuX0TQMIa2JtV2K6a3t3yDzeWZHpUWqVkL7XkPkV9soeDlHbm9hhhP63OddFbEh7w254cfsuMqGiBI+Ibh4bcvw/1AO8=
+  file: "./*"
   file_glob: true
-  file: ./*
-  skip_cleanup: true
   on:
-    tags: true
+    repo: Anarhyst266/logstash-filter-kubernetes_metadata
+  skip_cleanup: 'true'
