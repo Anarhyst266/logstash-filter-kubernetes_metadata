@@ -19,3 +19,11 @@ install: true
 script: ci/build.sh
 jdk: openjdk8
 before_install: gem install bundler -v '< 2'
+deploy:
+  provider: releases
+  api_key: 0da4ae53d707480fab6637d225a21eccc24d805c
+  file_glob: true
+  file: ./*
+  skip_cleanup: true
+  on:
+    tags: true
